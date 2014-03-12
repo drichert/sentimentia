@@ -1,5 +1,7 @@
 # Sentimentia
 
+***WIP***
+
 Filter sentences in a specified text file by sentiment analyais value range. 
 Uses [Treat](https://github.com/louismullie/treat) for sentence segmentation
 and [sentimental](https://github.com/7compass/sentimental) for sentiment 
@@ -27,7 +29,7 @@ Or install it yourself as:
 # Output sentences with sentiment analysis values equal to or greater than
 # -4.0 and less than or equal to 1.0
 
-sentimentia wuthering-heights.txt -4.0 1.0
+sentimentia share/text/wuthering-heights.txt -4.0 1.0
 ```
 
 ## Contributing
