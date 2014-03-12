@@ -8,7 +8,7 @@ Gem::Specification.new do |spec|
   spec.version       = Sentimentia::VERSION
   spec.authors       = ["Dan Richert"]
   spec.email         = ["dan.richert@gmail.com"]
-  spec.description   = %q{Filter senteces by a range of sentiment values}}
+  spec.description   = %q{Filter sentences by a range of sentiment analysis values}
   spec.summary       = %q{Filter sentences by sentiment}
   spec.homepage      = "https://github.com/sentimentia"
   spec.license       = "MIT"
