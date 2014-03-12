@@ -1,0 +1,56 @@
+#!/usr/bin/env ruby
+
+require "sentimental"
+require "treat"
+
+include Treat::Core::DSL
+
+Sentimental.load_defaults
+
+sent = Sentimental.new
+#thresh = ARGV[0].to_f
+#range  = 0.1
+
+# NEG
+#lo = -7.0
+#hi = -3.0
+
+# POS
+lo = -7.0
+hi = -2.0
+
+#lowest = 0
+#highest = 0
+
+text = paragraph(File.read("wuthering-heights.txt")).segment
+
+#p text.to_a[30..300]
+text.each do |s|
+  s = s.to_s
+
+  score = sent.get_score(s)
+
+  puts s if score >= lo && score <= hi
+end
+
+##File.open("wuthering-heights.txt").each_line do |line|
+#text.each do |_sentence|
+#  _sentence = _sentence.to_s
+#
+#  #score = sent.get_score(line)
+#  score = sent.get_score(_sentence)
+#
+#  #lowest = score if score < lowest
+#  #highest = score if score > highest
+#
+#  #p [score, lowest, highest]
+#
+#  #if score >= (thresh - range) and score <= (thresh + range)
+#  #  puts line
+#  #end
+#
+#  if score >= lo && score <= hi
+#    puts "hi!!!"
+#    puts _sentence.to_s
+#  end
+#end
