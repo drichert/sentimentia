@@ -16,7 +16,7 @@ module Sentimentia
     end
 
     def text
-      paragraph(File.read(@file)).segement
+      paragraph(File.read(@file)).segment
     end
 
     def filter(lo = @lo, hi = @hi)
@@ -36,11 +36,15 @@ module Sentimentia
         @file, @lo, @hi = ARGV
       end
 
-      @filter = Filter.new(@file, @lo, @hi)
+      @filter = Filter.new(@file, @lo.to_f, @hi.to_f)
+
+      generate
     end
 
     def generate
-      @filter.filter.each {|s| puts s }
+      @filter.filter.each do |s|
+        puts s.to_s
+      end
     end
 
     private
